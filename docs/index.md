@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /zh/guide/getting-started
+      link: /webpack/index
     - theme: alt
       text: GitHub
       link: https://github.com/panhe-xue
