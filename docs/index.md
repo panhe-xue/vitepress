@@ -11,10 +11,10 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /webpack/index
+      link: /basics/index
     - theme: alt
-      text: GitHub
-      link: https://github.com/panhe-xue
+      text: 任务
+      link: /learn/index
   image:
       src: /logo.jpg
       alt: VitePress

@@ -6,10 +6,20 @@ export default {
         logo: "/logo.jpg",
         nav: [
             {
-              text: 'webpack',
-              link: '/webpack/',
-              activeMatch: '/webpack/'
+                text: '基础',
+                link: '/basics/',
+                activeMatch: '/basics/'
+              },
+            {
+              text: '工程化',
+              link: '/engineering/',
+              activeMatch: '/engineering/'
             },
+            {
+                text: 'webpack',
+                link: '/webpack/',
+                activeMatch: '/webpack/'
+              },
             {
               text: 'vue',
               link: '/vue/index',
@@ -21,17 +31,61 @@ export default {
                 activeMatch: '/react/'
             },
             {
-                text: '算法',
-                link: '/leetcode/index',
-                activeMatch: '/leetcode/'
+              text: '其他分类',
+              items: [
+                {
+                  items: [
+                    
+                    {
+                      text: 'nuxt',
+                      link: '/browser/index',
+                      activeMatch: '/browser/'
+                    },
+                    {
+                      text: 'node',
+                      link: '/performance/index',
+                      activeMatch: '/performance/'
+                    },
+                    {
+                      text: 'cicd',
+                      link: '/interview/index',
+                      activeMatch: '/interview/'
+                    }
+                  ]
+                },
+                {
+                  items: [
+                    {
+                      text: '算法',
+                      link: '/leetcode/index',
+                      activeMatch: '/leetcode/'
+                    },
+                    {
+                      text: '浏览器工作原理',
+                      link: '/browser/index',
+                      activeMatch: '/browser/'
+                    },
+                    {
+                      text: '性能优化',
+                      link: '/performance/index',
+                      activeMatch: '/performance/'
+                    },
+                    {
+                      text: '面试题',
+                      link: '/interview/index',
+                      activeMatch: '/interview/'
+                    },
+                    {
+                      text: '手写系列',
+                      link: '/interview/index',
+                      activeMatch: '/interview/'
+                    }
+                  ]
+                },
+              ]
             },
             {
-                text: '面试题',
-                link: '/interview/index',
-                activeMatch: '/interview/'
-            },
-            {
-              text: '其他',
+              text: '相关链接',
               items: [
                 {
                   text: '掘金',
@@ -49,22 +103,78 @@ export default {
             }
           ],
         sidebar: {
+            '/basics/': { base: '/basics/', items: sidebarBasics() },
+            '/engineering/': { base: '/engineering/', items: sidebarEngineering() },
             '/webpack/': { base: '/webpack/', items: sidebarWepack() },
             '/vue/': { base: '/vue/', items: sidebarVue() },
             '/react/': { base: '/react/', items: sidebarReact() },
             '/leetcode/': { base: '/vue/', items: sidebarLeetcode() },
             '/interview/': { base: '/interview/', items: sidebarInterview() },
+            '/performance/': { base: '/performance/', items: sidebarPerformance() },
+            '/browser/': { base: '/browser/', items: sidebarBrowser() },
         },
         footer: {
-            message: '基于 MIT 许可发布',
-            copyright: `版权所有 © 2024-${new Date().getFullYear()} 潘鹤`
-          },
+          message: '基于 MIT 许可发布',
+          copyright: `版权所有 © 2024-${new Date().getFullYear()} 潘鹤`
+        },
       
-          docFooter: {
-            prev: '上一页',
-            next: '下一页'
-          },
+        docFooter: {
+          prev: '上一页',
+          next: '下一页'
+        },
     },
+  }
+
+  function sidebarBasics() {
+    return [
+      {
+        text: 'Dom',
+        collapsed: false,
+        items: [
+          { text: '什么是 VitePress？', link: 'html/what-is-vitepress' },
+          { text: '快速开始', link: 'html/getting-started' },
+          { text: '路由', link: 'html/routing' },
+          { text: '部署', link: 'html/deploy' }
+        ]
+      },
+      {
+        text: 'css',
+        collapsed: false,
+        items: [
+          { text: '响应式', link: 'css/Response' },
+          { text: '背景色', link: 'css/background' },
+          { text: 'frontmatter', link: 'css/frontmatter' },
+          { text: '在 Markdown 使用 Vue', link: 'css/using-vue' },
+          { text: '国际化', link: 'css/' }
+        ]
+      },
+      {
+        text: 'javascript',
+        collapsed: false,
+        items: [
+          { text: '作用域与变量提升', link: 'javascript/作用域与变量提升' },
+          { text: 'typeof和instanceof 原理', link: 'javascript/typeof 和 instanceof 原理' },
+          { text: 'new操作符', link: 'javascript/new操作符' },
+          { text: 'this那些事', link: 'javascript/this那些事' },
+          { text: 'this指向', link: 'javascript/this指向' },
+          { text: '继承', link: 'javascript/继承' },
+          { text: '存储', link: 'javascript/存储' },
+          { text: '异步', link: 'javascript/异步' },
+          { text: '浮点数精度', link: 'javascript/浮点数精度' },
+          { text: '大文件上传', link: 'javascript/大文件上传' },
+        ]
+      }
+    ]
+  }
+
+  function sidebarEngineering() {
+    return [
+      { text: '浏览器输入url后的整个过程', link: '浏览器输入url后的整个过程' },
+      { text: '浏览器的渲染机制', link: '浏览器的渲染机制' },
+      { text: '浏览器性能监控performance', link: '浏览器性能监控performance' },
+      { text: '前端优化性能的手段', link: '前端优化性能的手段' },
+      { text: '优化点', link: '优化点' }
+    ]
   }
 
   function sidebarWepack() {
@@ -178,6 +288,40 @@ export default {
       }
     ]
   }
+
+  function sidebarInterview() {
+    return [
+      {
+        text: '参考',
+        items: [
+          { text: '站点配置', link: 'site-config' },
+          { text: 'frontmatter 配置', link: 'frontmatter-config' },
+          { text: '运行时 API', link: 'runtime-api' },
+          { text: 'CLI', link: 'cli' },
+          {
+            text: '默认主题',
+            base: '/reference/default-theme-',
+            items: [
+              { text: '概览', link: 'config' },
+              { text: '导航栏', link: 'nav' },
+              { text: '侧边栏', link: 'sidebar' },
+              { text: '主页', link: 'home-page' },
+              { text: '页脚', link: 'footer' },
+              { text: '布局', link: 'layout' },
+              { text: '徽章', link: 'badge' },
+              { text: '团队页', link: 'team-page' },
+              { text: '上下页链接', link: 'prev-next-links' },
+              { text: '编辑链接', link: 'edit-link' },
+              { text: '最后更新时间戳', link: 'last-updated' },
+              { text: '搜索', link: 'search' },
+              { text: 'Carbon Ads', link: 'carbon-ads' }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+
   function sidebarLeetcode() {
     return [
       {
@@ -210,7 +354,41 @@ export default {
       }
     ]
   }
-  function sidebarInterview() {
+
+  function sidebarPerformance() {
+    return [
+      {
+        text: '参考',
+        items: [
+          { text: '站点配置', link: 'site-config' },
+          { text: 'frontmatter 配置', link: 'frontmatter-config' },
+          { text: '运行时 API', link: 'runtime-api' },
+          { text: 'CLI', link: 'cli' },
+          {
+            text: '默认主题',
+            base: '/reference/default-theme-',
+            items: [
+              { text: '概览', link: 'config' },
+              { text: '导航栏', link: 'nav' },
+              { text: '侧边栏', link: 'sidebar' },
+              { text: '主页', link: 'home-page' },
+              { text: '页脚', link: 'footer' },
+              { text: '布局', link: 'layout' },
+              { text: '徽章', link: 'badge' },
+              { text: '团队页', link: 'team-page' },
+              { text: '上下页链接', link: 'prev-next-links' },
+              { text: '编辑链接', link: 'edit-link' },
+              { text: '最后更新时间戳', link: 'last-updated' },
+              { text: '搜索', link: 'search' },
+              { text: 'Carbon Ads', link: 'carbon-ads' }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+
+  function sidebarBrowser() {
     return [
       {
         text: '参考',
