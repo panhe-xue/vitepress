@@ -131,10 +131,19 @@ export default {
         text: 'Dom',
         collapsed: false,
         items: [
-          { text: '什么是 VitePress？', link: 'html/what-is-vitepress' },
-          { text: '快速开始', link: 'html/getting-started' },
-          { text: '路由', link: 'html/routing' },
-          { text: '部署', link: 'html/deploy' }
+          { text: '找到所有标签', link: 'dom/找到所有标签' },
+          { text: '最多的标签', link: 'dom/最多的标签' },
+          { text: '跨域', link: 'dom/跨域' },
+          { text: '图片懒加载', link: 'dom/图片懒加载' },
+          { text: 'sessionStorage与localStorage', link: 'dom/sessionStorage与localStorage' },
+          { text: 'Cookie', link: 'dom/Cookie' },
+          { text: 'addEventListener', link: 'dom/addEventListener' },
+          { text: '取消请求的发送', link: 'dom/取消请求的发送' },
+          { text: '判断在移动端', link: 'dom/判断在移动端' },
+          { text: 'requestIdleCallback', link: 'dom/requestIdleCallback' },
+          { text: 'DOM转化为图片', link: 'dom/DOM转化为图片' },
+          { text: 'JSONP', link: 'dom/JSONP' },
+          { text: '其他', link: 'dom/其他' },
         ]
       },
       {
